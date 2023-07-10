@@ -150,13 +150,17 @@ class Query:
             timestamp = params.timestamp
             nonce = params.nonce
 
-            ######本地测试需注释掉
-            # message = channel.crypto.decrypt_message(web.data(), signature, timestamp, nonce)
+            ######本地调试需禁用，生产环境需启用
+            message = channel.crypto.decrypt_message(web.data(), signature, timestamp, nonce)
 
         except (InvalidSignatureException, InvalidCorpIdException):
             raise web.Forbidden()
-        ########本地测试用apipost模拟发送请求。
-        message= "<xml><ToUserName><![CDATA[wx8b1db67892d7516a]]></ToUserName><FromUserName><![CDATA[cxkj_cbe]]></FromUserName><CreateTime>1687766467</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[小明的爸爸有两个儿子，一个儿子叫大王，另一个儿子叫什么？]]></Content><MsgId>7248901781898144297</MsgId><AgentID>1000253</AgentID></xml>"
+        ########本地测试用apipost模拟发送请求。######本地调试需启用，生产环境需禁用
+          #文字
+        #message= "<xml><ToUserName><![CDATA[wx8b1db67892d7516a]]></ToUserName><FromUserName><![CDATA[cxkj_cbe]]></FromUserName><CreateTime>1687766467</CreateTime><MsgType><![CDATA[text]]></MsgType><Content><![CDATA[小明的爸爸有两个儿子，一个儿子叫大王，另一个儿子叫什么？]]></Content><MsgId>7248901781898144297</MsgId><AgentID>1000253</AgentID></xml>"
+          #语音
+        #message = "<xml><ToUserName><![CDATA[wx8b1db67892d7516a]]></ToUserName><FromUserName><![CDATA[cxkj_cbe]]></FromUserName><CreateTime>1688113072</CreateTime><MsgType><![CDATA[voice]]></MsgType><MediaId><![CDATA[12mKyNkM1aUyG5PP1_m2OalocL99xq5pDCQXO24mSco4ANHqVZMrOSNZo9JJlrmbW]]></MediaId><Format><![CDATA[amr]]></Format><MsgId>7250390438353853225</MsgId><AgentID>1000253</AgentID></xml>"
+
         msg = parse_message(message)
         logger.debug("[wechatcom] receive message: {}, msg= {}".format(message, msg))
         if msg.type == "event":

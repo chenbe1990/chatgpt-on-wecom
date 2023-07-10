@@ -9,6 +9,7 @@ class Database:
         load_config()
         self.conn = None
         self.cursor = None
+        print(conf().get("datatable"))
         try:
             self.conn = pymysql.connect(
                 host=conf().get("host"),
@@ -26,7 +27,8 @@ class Database:
             return
 
         try:
-            sql = "INSERT INTO chat_wecom (user_id,req_content,res_content,prompt_tokens,completion_tokens,total_tokens,created_at) VALUES (%s,%s,%s,%s,%s,%s,%s)"
+            datatable=conf().get("datatable")
+            sql = f"INSERT INTO {datatable} (user_id,req_content,res_content,prompt_tokens,completion_tokens,total_tokens,created_at) VALUES (%s,%s,%s,%s,%s,%s,%s)"
             values = (user_id, req_content, res_content, prompt_tokens, completion_tokens, total_tokens, datetime.datetime.now())
             self.cursor.execute(sql, values)
             self.conn.commit()

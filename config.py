@@ -108,7 +108,8 @@ available_setting = {
     "host" : "",
     "user" : "",
     "password" : "",
-    "database" : ""
+    "database" : "",
+    "datatable": ""
 }
 
 

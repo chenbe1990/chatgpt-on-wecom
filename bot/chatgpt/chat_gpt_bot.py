@@ -132,10 +132,10 @@ class ChatGPTBot(Bot, OpenAIImage):
             #插入数据库
             db = Database()
             db_user_id =session.session_id
-            db_req_content = session.messages[1]['content']
+            db_req_content = session.messages[-1]['content']
             db_res_content = response.choices[0]["message"]["content"]
-            db_prompt_tokens = response["usage"]["completion_tokens"]
-            db_completion_tokens = response["usage"]['prompt_tokens']
+            db_prompt_tokens = response["usage"]['prompt_tokens']
+            db_completion_tokens = response["usage"]["completion_tokens"]
             db_total_tokens= response["usage"]["total_tokens"]
             db.insert_chatlog(db_user_id,db_req_content,db_res_content,db_prompt_tokens,db_completion_tokens,db_total_tokens)
 
