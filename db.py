@@ -15,7 +15,8 @@ class Database:
                 host=conf().get("host"),
                 user=conf().get("user"),
                 password=conf().get("password"),
-                database=conf().get("database")
+                database=conf().get("database"),
+                port=conf().get("port")
             )
             self.cursor = self.conn.cursor()
         except Exception as e:

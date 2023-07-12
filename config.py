@@ -105,11 +105,12 @@ available_setting = {
     "use_linkai": False,
     "linkai_api_key": "",
     "linkai_app_code": "",
-    "host" : "",
-    "user" : "",
-    "password" : "",
-    "database" : "",
-    "datatable": ""
+    "host": "",
+    "user": "",
+    "password": "",
+    "database": "",
+    "datatable": "",
+    "port": ""
 }
 
 
