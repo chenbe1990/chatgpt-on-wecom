@@ -1,7 +1,7 @@
 {
         "open_ai_api_key": "fk194988-0yvRocbjjOeI51StsylVnblQNLeJo6tx",
         "open_ai_api_base" : "https://openai.api2d.net/v1",
-        "open_ai_api_base_Audio": "https://chatai.451024.xyz/v1",
+        "open_ai_api_base_Audio": "http://38.6.172.103:9000/proxy/v1",
         "open_ai_api_key_Audio": "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",
         "model": "gpt-3.5-turbo",
         "proxy": "",
