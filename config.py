@@ -110,7 +110,9 @@ available_setting = {
     "password": "",
     "database": "",
     "datatable": "",
-    "port": ""
+    "port": "",
+    "open_ai_api_base_Audio": "",
+    "open_ai_api_key_Audio":""
 }
 
 

@@ -1,6 +1,8 @@
 {
         "open_ai_api_key": "fk194988-0yvRocbjjOeI51StsylVnblQNLeJo6tx",
         "open_ai_api_base" : "https://openai.api2d.net/v1",
+        "open_ai_api_base_Audio": "https://chatai.451024.xyz/v1",
+        "open_ai_api_key_Audio": "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",
         "model": "gpt-3.5-turbo",
         "proxy": "",
         "single_chat_prefix": [""],
@@ -13,7 +15,6 @@
                 "看",
                 "找"
         ],
-        "speech_recognition": false,
         "group_speech_recognition": false,
         "voice_reply_voice": false,
         "conversation_max_tokens": 1000,
@@ -33,11 +34,6 @@
         "password":"84789791",
         "database":"chat01",
         "datatable":"gpt35",
-        "speech_recognition": true,
-        "voice_to_text": "baidu",
-        "text_to_voice": "baidu",
-        "baidu_app_id": "35517806",
-        "baidu_api_key": "4Bjls1GyZzqYkbg0NdrRaeGp",
-        "baidu_secret_key": "T2nqF1Y2DybVzsTr2ytSGkoYeBMjzI64",
-        "baidu_dev_pid": "1536"
+        "speech_recognition":true,
+        "voice_to_text": "openai"
 }
