@@ -64,7 +64,16 @@ def any_to_wav(any_path, wav_path):
     if any_path.endswith(".sil") or any_path.endswith(".silk") or any_path.endswith(".slk"):
         return sil_to_wav(any_path, wav_path)
     audio = AudioSegment.from_file(any_path)
-    audio.export(wav_path, format="wav")
+
+    '''
+    #新添加ffmpeg传入参数
+    # bits_per_sample = 16
+    # sample_fmt = 's16'
+    '''
+    #修改：添加了parameters指定参数
+    # audio.export(wav_path, format="wav")  #未修改前
+    audio.export(wav_path, format="wav",parameters=['-ar', '16000', '-sample_fmt', 's16','-ac','1'])
+
 
 
 def any_to_sil(any_path, sil_path):
