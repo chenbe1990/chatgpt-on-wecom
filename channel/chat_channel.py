@@ -165,7 +165,7 @@ class ChatChannel(Channel):
             if e_context.is_break():
                 context["generate_breaked_by"] = e_context["breaked_by"]
             if context.type == ContextType.TEXT or context.type == ContextType.IMAGE_CREATE:  # 文字和图片消息
-                reply = super().build_reply_content(context.content, context)
+                reply = super().build_reply_content(context.content, context)  #发送到gpt等待生成结果
             elif context.type == ContextType.VOICE:  # 语音消息
                 cmsg = context["msg"]
                 cmsg.prepare()
@@ -177,6 +177,7 @@ class ChatChannel(Channel):
                     logger.warning("[WX]any to wav error, use raw path. " + str(e))
                     wav_path = file_path
                 # 语音识别
+
                 reply = super().build_voice_to_text(wav_path)
                 # 删除临时文件
                 try:
@@ -190,7 +191,7 @@ class ChatChannel(Channel):
                 if reply.type == ReplyType.TEXT:
                     new_context = self._compose_context(ContextType.TEXT, reply.content, **context.kwargs)
                     if new_context:
-                        reply = self._generate_reply(new_context)
+                        reply = self._generate_reply(new_context)  #发送text到gpt
                     else:
                         return
             elif context.type == ContextType.IMAGE:  # 图片消息，当前无默认逻辑

@@ -55,13 +55,17 @@ available_setting = {
     "voice_reply_voice": False,  # 是否使用语音回复语音，需要设置对应语音合成引擎的api key
     "always_reply_voice": False,  # 是否一直使用语音回复
     "voice_to_text": "openai",  # 语音识别引擎，支持openai,baidu,google,azure
-    "text_to_voice": "baidu",  # 语音合成引擎，支持baidu,google,pytts(offline),azure
+    "text_to_voice": "baidu",  # 语音合成引擎，支持baidu,google,pytts(offline),azure,xunfei
     # baidu 语音api配置， 使用百度语音识别和语音合成时需要
     "baidu_app_id": "",
     "baidu_api_key": "",
     "baidu_secret_key": "",
     # 1536普通话(支持简单的英文识别) 1737英语 1637粤语 1837四川话 1936普通话远场
     "baidu_dev_pid": "1536",
+    #讯飞语音api配置， 使用讯飞语音识别
+    "xunfei_app_id":"",
+    "xunfei_api_key":"",
+    "xunfei_secret_key":"",
     # azure 语音api配置， 使用azure语音识别和语音合成时需要
     "azure_voice_api_key": "",
     "azure_voice_region": "japaneast",

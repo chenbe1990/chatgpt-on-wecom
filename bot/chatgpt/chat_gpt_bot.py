@@ -125,9 +125,11 @@ class ChatGPTBot(Bot, OpenAIImage):
 
 
             #改成自定义接口
-            base_url = conf().get("open_ai_api_base") ######
-            logger.debug("base_url:"+base_url)
-            response = openai.ChatCompletion.create(api_key=api_key, messages=session.messages, **args)
+            # base_url = conf().get("open_ai_api_base") ######
+            # openai.api_base= conf().get("open_ai_api_base")
+            # openai.api_key = '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'
+            logger.debug("请求base_url:"+conf().get("open_ai_api_base"))
+            response = openai.ChatCompletion.create(api_key=api_key, messages=session.messages, **args) #调用chagpt聊天接口
 
             #插入数据库
             db = Database()

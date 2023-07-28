@@ -47,7 +47,7 @@ class Bridge(object):
         return self.get_bot("chat").reply(query, context)
 
     def fetch_voice_to_text(self, voiceFile) -> Reply:
-        return self.get_bot("voice_to_text").voiceToText(voiceFile)
+        return self.get_bot("voice_to_text").voiceToText(voiceFile)  #调用音频转文字voiceToText()函数
 
     def fetch_text_to_voice(self, text) -> Reply:
         return self.get_bot("text_to_voice").textToVoice(text)

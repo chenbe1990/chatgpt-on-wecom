@@ -35,5 +35,8 @@
         "database":"chat01",
         "datatable":"gpt35",
         "speech_recognition":true,
-        "voice_to_text": "openai"
+        "voice_to_text": "xunfei",
+        "xunfei_app_id":"2dcd7db5",
+        "xunfei_api_key":"f87b6537c5929d54ad388253a07f5669",
+        "xunfei_secret_key":"NjhhYzhkMjZlNjAxZGNjNzE3MjE2OTk2"
 }
